@@ -65,6 +65,8 @@ h1 {
     background-color: #fff;
     overflow: hidden;
     position: relative;
+    border-radius: 0.5rem;
+    cursor: default;
 }
 
 .key:hover {

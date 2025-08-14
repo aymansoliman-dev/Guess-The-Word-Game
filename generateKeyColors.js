@@ -32,7 +32,13 @@ export default function generateKeyColors() {
 
     const tip = document.createElement('p');
     tip.innerHTML = `<span class="material-icons tip" style="color: var(--yellow)">tips_and_updates</span><strong>To get a hint,</strong> you need to <strong>leave the desired input box blank.</strong>`;
-    tip.style.fontSize = '0.9rem';
+    tip.style.cssText = `
+        padding: 1rem;
+        background: wheat;
+        font-size: 0.9rem;
+        border-radius: 0.5rem;
+        cursor: default;
+    `
     wrapper.appendChild(tip);
 
     return wrapper;
