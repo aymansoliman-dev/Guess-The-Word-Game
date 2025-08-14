@@ -126,7 +126,7 @@ function generateFailingMsg() {
     wrapper.innerHTML = `
         <h2>You <span style="color: indianred; font-weight: bold">Lost!</span></h2>
         <p>The word was <span>'${WORD}'</span></p>
-        <p>Your Score: <span style="color: indianred; font-weight: bold">${numberOfTrials}</span>/5</p>
+        <p>Your Score: <span style="color: indianred; font-weight: bold">${numberOfTrials}</span> / 5</p>
         <button id="reset-button" onclick="window.location.reload()">Try Again</button>       
     `;
 
@@ -145,7 +145,7 @@ function generateSuccessMsg() {
     wrapper.innerHTML = `
         <h2>You <span style="color: mediumspringgreen; font-weight: bold">Won!</span></h2>
         <p>The word was <span>'${WORD}'</span></p>
-        <p>Your Score: <span style="color: mediumspringgreen; font-weight: bold">${++numberOfTrials}</span>/5</p>
+        <p>Your Score: <span style="color: mediumspringgreen; font-weight: bold">${++numberOfTrials}</span> / 5</p>
         <button id="reset-button" onclick="window.location.reload()">Play Again</button>
     `;
 
