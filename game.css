@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+*::selection {
+    background-color: var(--yellow);
+    color: black;
+}
+
 body {
     background-color: #eee;
     margin: 0;
@@ -230,8 +235,11 @@ h1 {
 }
 
 #hint-button > span:first-child {
+    font-size: 0.75rem;
     font-weight: bold;
-    text-decoration: underline;
+    border: 2px solid;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.5rem;
 }
 
 /**/

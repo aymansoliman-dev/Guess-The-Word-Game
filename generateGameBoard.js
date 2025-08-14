@@ -42,7 +42,7 @@ export default function generateGameBoard() {
 
     const hintButton = document.createElement("button");
     hintButton.id = 'hint-button';
-    hintButton.innerHTML = `<span></span><span>Hints</span> <span class="material-icons">tips_and_updates</span>`;
+    hintButton.innerHTML = `<span></span><span>Hints</span> <span class="material-icons" style="font-size: 1.25rem">tips_and_updates</span>`;
     buttonBox.appendChild(hintButton);
 
     wrapper.appendChild(buttonBox);
