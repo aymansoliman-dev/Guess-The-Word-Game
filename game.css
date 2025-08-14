@@ -1,0 +1,286 @@
+:root {
+    --yellow: #f89e14;
+    --green: #19bb8a;
+    --black: #273040;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    margin: 0;
+    font-family: cairo, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--black);
+    color: #fff;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    text-transform: capitalize;
+}
+
+/**/
+
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    #game {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
+/**/
+
+#game-keys h2 {
+    text-align: center;
+    padding: 1rem;
+}
+
+#keys-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.key {
+    display: flex;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.key:hover {
+    & .color {
+        transform: scale(32);
+    }
+    color: white;
+}
+
+.color {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    transition: 0.60s ease-in-out;
+}
+
+.key p {
+    z-index: 2;
+    margin-left: calc(32px + 1rem);
+}
+
+.yellow.color {
+    background-color: var(--yellow);
+}
+
+.green.color {
+    background-color: var(--green);
+}
+
+.black.color {
+    background-color: var(--black);
+}
+
+/**/
+
+#game-board > div {
+    padding: clamp(1rem, 2vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 1rem;
+}
+
+#trials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.try {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.try h2 {
+    color: grey;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-wrap: nowrap;
+}
+
+.try h2:has(+ .active) {
+    color: black;
+}
+
+.input-fields-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.input-field {
+    min-height: 3.5ch;
+    max-width: clamp(2rem, 10vw, 4ch);
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    background-color: white;
+    border-bottom: 0.25rem solid;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    aspect-ratio: 1 / 1;
+}
+
+.input-field:focus {
+    background-color: #d1ffff;
+}
+
+.input-field:disabled {
+    border-bottom: none;
+}
+
+/**/
+
+#button-box {
+    display: flex;
+    gap: 1rem;
+}
+
+#check-button {
+    flex-grow: 2;
+}
+
+#check-button,
+#reset-button,
+#hint-button {
+    border: none;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    background-color: var(--green);
+    color: white;
+    padding: 1rem;
+    align-self: center;
+    cursor: pointer;
+    border-bottom: 0.25rem solid black;
+    border-radius: 0.5rem;
+}
+
+#reset-button {
+    background-color: var(--black);
+}
+
+#hint-button {
+    background-color: var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    flex-grow: 1
+}
+
+#check-button,
+#reset-button,
+#hint-button {
+    transition: all 0.25s ease-in-out;
+}
+
+#check-button:hover,
+#reset-button:hover,
+#hint-button:hover {
+    transform: translateY(-0.25rem);
+}
+
+#check-button:active,
+#reset-button:active,
+#hint-button:active {
+    scale: 0.95;
+}
+
+#check-button:disabled,
+#hint-button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+#check-button:disabled:hover,
+#hint-button:disabled:hover {
+    transform: none;
+}
+
+#hint-button > span:first-child {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/**/
+
+.correct {
+    background-color: var(--yellow);
+    color: white;
+}
+
+.not-in-place {
+    background-color: var(--green);
+    color: white;
+}
+
+.incorrect {
+    background-color: var(--black);
+    color: white;
+}
+
+/**/
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: small;
+    background-color: var(--black);
+    color: white;
+}
+
+/**/
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.popup > div {
+    background-color: white;
+    width: min(75%, 400px);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.tip {
+    margin-right: 0.5rem;
+}
