@@ -2,7 +2,7 @@ const VK_LEFT = 37;
 const VK_RIGHT = 39;
 const VK_BACKSPACE = 8;
 const VK_ENTER = 13;
-const WORD = 'FRIEND';
+const WORD = 'WINTER';
 const WINNING_SOUND_EFFECT = new Audio('sound effects/win.mp3');
 const LOSING_SOUND_EFFECT = new Audio('sound effects/you-lost.mp3');
 const HINT_SOUND_EFFECT = new Audio('sound effects/hint.mp3');
@@ -59,13 +59,19 @@ checkButton.addEventListener('click', () => {
         guess.push(inputField.getAttribute('value'));
     });
     
-    if (guess.join('') === '') {
+    if (guess.join('').trim() === '') {
+        
+        Array.from(activeRow.children).forEach(inputField => {
+            inputField.value = '';
+            inputField.setAttribute('value', '');
+        });
+
         alert('Invalid Input!');
         document.querySelector('.active').children[0].focus();
         return;
     }
 
-    if (activeRow.previousElementSibling.innerHTML === 'Try 5' && guess.join('') !== WORD) {
+    if (activeRow.previousElementSibling.innerHTML === 'Try 5' && guess.join('').trim() !== WORD) {
         checkLetters(guess, WORD, activeRow);
         
         Array.from(activeRow.children).forEach(inputField => {
@@ -77,7 +83,7 @@ checkButton.addEventListener('click', () => {
         generateFailingMsg();
     }
 
-    else if (guess.join('') === WORD) {
+    else if (guess.join('').trim() === WORD) {
         guess.forEach(letter => {
             activeRow.querySelector(`.letter-${WORD.indexOf(letter)+1}`).classList.add('correct');
         })
@@ -181,7 +187,7 @@ function checkLetters(guess, WORD, activeRow) {
             activeRow.querySelector(`.letter-${i+1}`).classList.add('correct');
             activeRow.querySelector(`.letter-${i+1}`).setAttribute('checked', '');
         }
-        else if (WORD.includes(guess[i]) && guess[i] !== "") {
+        else if (WORD.includes(guess[i]) && guess[i] !== '') {
             activeRow.querySelector(`.letter-${i+1}`).classList.add('not-in-place');
             activeRow.querySelector(`.letter-${i+1}`).setAttribute('checked', '');
         }
