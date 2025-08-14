@@ -115,10 +115,6 @@ checkButton.addEventListener('click', () => {
 
 hintButton.addEventListener('click', () => {
     if (numberOfHints > 0) {
-
-        HINT_SOUND_EFFECT.currentTime = 1;
-        HINT_SOUND_EFFECT.play();
-
         const activeRow = document.querySelector('.active');
         const activeElement = activeRow.querySelector(`.input-field[value='']`);
         activeElement.value = WORD[activeElement.getAttribute('order')];
@@ -129,6 +125,9 @@ hintButton.addEventListener('click', () => {
         
         numberOfHints--;
         hintButton.querySelector('span').innerHTML = `${numberOfHints}`;
+
+        HINT_SOUND_EFFECT.currentTime = 1;
+        HINT_SOUND_EFFECT.play();
         
         if (activeElement.nextElementSibling !== null) activeElement.nextElementSibling.focus();
         else activeRow.querySelector('.input-field:not([checked])').focus();

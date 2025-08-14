@@ -42,13 +42,6 @@ h1 {
     gap: 2rem;
 }
 
-@media (max-width: 1024px) {
-    #game {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-}
-
 /**/
 
 #game-keys h2 {
@@ -293,4 +286,22 @@ footer {
 
 .tip {
     margin-right: 0.5rem;
+}
+
+/**/
+
+@media (max-width: 1024px) {
+    #game {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    body {
+        min-height: auto;
+        zoom: 1.25;
+    }
+
+    #game-keys h2 {
+        margin-bottom: 0;
+    }
 }
