@@ -287,7 +287,7 @@ footer {
 .popup > div {
     background-color: white;
     width: min(75%, 400px);
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 0.5rem;
 }
 

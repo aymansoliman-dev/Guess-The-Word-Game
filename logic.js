@@ -3,6 +3,9 @@ const VK_RIGHT = 39;
 const VK_BACKSPACE = 8;
 const VK_ENTER = 13;
 const WORD = 'FRIEND';
+const WINNING_SOUND_EFFECT = new Audio('sound effects/win.mp3');
+const LOSING_SOUND_EFFECT = new Audio('sound effects/you-lost.mp3');
+const HINT_SOUND_EFFECT = new Audio('sound effects/hint.mp3');
 let numberOfTrials = 5;
 let numberOfHints = 3;
 
@@ -101,6 +104,10 @@ checkButton.addEventListener('click', () => {
 
 hintButton.addEventListener('click', () => {
     if (numberOfHints > 0) {
+
+        HINT_SOUND_EFFECT.currentTime = 1;
+        HINT_SOUND_EFFECT.play();
+
         const activeRow = document.querySelector('.active');
         const activeElement = activeRow.querySelector(`.input-field[value='']`);
         activeElement.value = WORD[activeElement.getAttribute('order')];
@@ -124,12 +131,15 @@ function generateFailingMsg() {
 
     const wrapper = document.createElement('div');
     wrapper.innerHTML = `
-        <h2>You <span style="color: indianred; font-weight: bold">Lost!</span></h2>
+        <h2>You <span style="color: indianred; font-weight: bold">Lost?!</span></h2>
         <p>The word was <span>'${WORD}'</span></p>
         <p>Your Score: <span style="color: indianred; font-weight: bold">${numberOfTrials}</span>/5</p>
         <button id="reset-button" onclick="window.location.reload()">Try Again</button>       
     `;
 
+    LOSING_SOUND_EFFECT.currentTime = 0;
+    LOSING_SOUND_EFFECT.play();
+    
     const timeOut = setTimeout(() => {
         popup.appendChild(wrapper);
         document.body.appendChild(popup);
@@ -148,6 +158,9 @@ function generateSuccessMsg() {
         <p>Your Score: <span style="color: mediumspringgreen; font-weight: bold">${++numberOfTrials}</span>/5</p>
         <button id="reset-button" onclick="window.location.reload()">Play Again</button>
     `;
+
+    WINNING_SOUND_EFFECT.currentTime = 0;    
+    WINNING_SOUND_EFFECT.play();
 
     const timeOut = setTimeout(() => {
         popup.appendChild(wrapper);
