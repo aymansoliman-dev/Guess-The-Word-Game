@@ -6,6 +6,11 @@ const WORD = 'FRIEND';
 const WINNING_SOUND_EFFECT = new Audio('sound effects/win.mp3');
 const LOSING_SOUND_EFFECT = new Audio('sound effects/you-lost.mp3');
 const HINT_SOUND_EFFECT = new Audio('sound effects/hint.mp3');
+
+[WINNING_SOUND_EFFECT, LOSING_SOUND_EFFECT, HINT_SOUND_EFFECT].forEach(sound => {
+    sound.volume = 0.6;
+});
+
 let numberOfTrials = 5;
 let numberOfHints = 3;
 
