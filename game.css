@@ -14,7 +14,7 @@
 }
 
 body {
-    background-color: #eee;
+    background-color: #d0d0d0;
     margin: 0;
     font-family: cairo, sans-serif;
     min-height: 100vh;
@@ -124,13 +124,14 @@ h1 {
 }
 
 .try h2 {
-    color: grey;
+    color: var(--black);
     font-size: clamp(1rem, 2vw, 1.5rem);
     text-wrap: nowrap;
+    padding: clamp(0.5rem, 1vw, 1rem);
 }
 
 .try h2:has(+ .active) {
-    color: black;
+    border: 1px dashed var(--black);
 }
 
 .input-fields-group {
@@ -146,7 +147,7 @@ h1 {
     text-align: center;
     border: none;
     background-color: white;
-    border-bottom: 0.25rem solid;
+    border-bottom: 0.25rem solid var(--black);
     border-radius: 0.5rem;
     text-transform: uppercase;
     aspect-ratio: 1 / 1;
@@ -177,11 +178,11 @@ h1 {
     border: none;
     font-size: clamp(0.75rem, 2vw, 1rem);
     background-color: var(--green);
-    color: white;
+    color: var(--black) ;
     padding: 1rem;
     align-self: center;
     cursor: pointer;
-    border-bottom: 0.25rem solid black;
+    border-bottom: 0.25rem solid var(--black);
     border-radius: 0.5rem;
 }
 
@@ -191,6 +192,7 @@ h1 {
 
 #hint-button {
     background-color: var(--yellow);
+    color: var(--black);
     display: flex;
     justify-content: center;
     align-items: center;

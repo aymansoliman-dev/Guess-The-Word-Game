@@ -15,7 +15,6 @@ const randomWords = [
 ];
 
 const WORD = randomWords[Math.floor(Math.random() * randomWords.length)].toUpperCase();
-console.log(WORD);
 
 const gameBoard = generateGameBoard();
 document.getElementById("game-board").appendChild(gameBoard);
