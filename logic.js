@@ -2,10 +2,24 @@ const VK_LEFT = 37;
 const VK_RIGHT = 39;
 const VK_BACKSPACE = 8;
 const VK_ENTER = 13;
-const WORD = 'WINTER';
+let WORD;
 const WINNING_SOUND_EFFECT = new Audio('sound effects/win.mp3');
 const LOSING_SOUND_EFFECT = new Audio('sound effects/you-lost.mp3');
 const HINT_SOUND_EFFECT = new Audio('sound effects/hint.mp3');
+
+
+// Fetch a random word from the API
+async function fetchRandomWord() {
+  try {
+    const res = await fetch('https://random-words-api.kushcreates.com/api?language=en&length=6&words=1&type=uppercase');
+    const [word] = await res.json();
+    WORD = word["word"];
+  } catch (err) {
+    console.error('Failed to fetch random word:', err);
+  }
+}
+
+fetchRandomWord();
 
 [WINNING_SOUND_EFFECT, LOSING_SOUND_EFFECT, HINT_SOUND_EFFECT].forEach(sound => {
     sound.volume = 0.6;
