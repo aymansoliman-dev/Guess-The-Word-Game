@@ -1,3 +1,5 @@
+import { WORD } from './game.js';
+
 export default function generateGameBoard() {
     const wrapper = document.createElement('div');
 
@@ -20,7 +22,7 @@ export default function generateGameBoard() {
         if (i === 1) inputFieldsGroup.classList.add("active");
         aTry.appendChild(inputFieldsGroup);
 
-        for (let ii = 1; ii <= 6; ii++) {
+        for (let ii = 1; ii <= WORD.length; ii++) {
             const inputField = document.createElement("input");
             inputField.classList.add("input-field", `try-${i}`, `letter-${ii}`);
             inputField.maxLength = 1;
@@ -49,3 +51,4 @@ export default function generateGameBoard() {
 
     return wrapper;
 }
+
