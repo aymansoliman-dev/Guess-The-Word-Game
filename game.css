@@ -188,6 +188,7 @@ h1 {
 
 #reset-button {
     background-color: var(--black);
+    color: white;
 }
 
 #hint-button {

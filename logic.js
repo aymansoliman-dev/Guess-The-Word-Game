@@ -211,3 +211,4 @@ function checkLetters(guess, WORD, activeRow) {
 }
 
 // TODO: reset the game, don't reload the page
+// TODO: add your links on a floating column

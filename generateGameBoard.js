@@ -11,20 +11,24 @@ export default function generateGameBoard() {
         const aTry = document.createElement("div");
         aTry.classList.add("try");
         aTry.id = `try-${i}`;
+        aTry.ariaLabel = `Try ${i}`;
         trials.appendChild(aTry);
 
         const tryNumber = document.createElement("h2");
         tryNumber.innerText = `Try ${i}`;
+        tryNumber.ariaLabel = `Try ${i} Heading`;
         aTry.appendChild(tryNumber);
 
         const inputFieldsGroup = document.createElement('div');
         inputFieldsGroup.classList.add("input-fields-group");
+        inputFieldsGroup.ariaLabel = `Input Fields Group ${i}`;
         if (i === 1) inputFieldsGroup.classList.add("active");
         aTry.appendChild(inputFieldsGroup);
 
         for (let ii = 1; ii <= WORD.length; ii++) {
             const inputField = document.createElement("input");
-            inputField.classList.add("input-field", `try-${i}`, `letter-${ii}`);
+            inputField.classList.add("input-field", `letter-${ii}`);
+            inputField.ariaLabel = `Letter ${ii}`;
             inputField.maxLength = 1;
             inputField.setAttribute('value', '');
             inputField.setAttribute('order', `${ii-1}`);
