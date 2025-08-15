@@ -33,6 +33,15 @@ const inputFields = document.querySelectorAll('.input-field');
 Array.from(inputFields)[ 0 ].focus();
 
 Array.from(inputFields).forEach(inputField => {
+    inputField.addEventListener('focusin', () => {
+        if(inputField.value === ' ') {
+            inputField.value = '';
+            inputField.setAttribute('value', '');
+        }
+    })
+})
+
+Array.from(inputFields).forEach(inputField => {
     inputField.addEventListener('input', () => {
         inputField.setAttribute('value', inputField.value.toUpperCase());
         if (inputField.nextElementSibling !== null) inputField.nextElementSibling.focus();
