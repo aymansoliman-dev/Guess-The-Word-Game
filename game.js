@@ -8,10 +8,8 @@ const randomWords = [
     'onions', 'pickle', 'marble', 'silver', 'golden', 'violet', 'purple', 'yellow', 'animal',
     'planet', 'rocket', 'bridge', 'castle', 'street', 'corner', 'people', 'family', 'friend',
     'garden', 'forest', 'desert', 'island', 'school', 'window', 'pillow', 'summer', 'winter',
-    'spring', 'autumn', 'bottle', 'bucket', 'breeze', 'driver', 'letter', 'number', 'string',
-    'blanket', 'picture', 'battery', 'teacher', 'student', 'airport', 'library',
-    'message', 'address', 'monster', 'morning', 'evening', 'holiday',
-    'apple', 'bread', 'chair', 'river', 'cloud', 'plant'
+    'spring', 'autumn', 'bottle', 'bucket', 'breeze', 'driver', 'letter', 'number', 'apple', 
+    'bread', 'chair', 'river', 'cloud', 'plant'
 ];
 
 const WORD = randomWords[Math.floor(Math.random() * randomWords.length)].toUpperCase();
