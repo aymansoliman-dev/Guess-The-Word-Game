@@ -4,14 +4,14 @@ import generateGameBoard from "./generateGameBoard.js";
 document.title = "Guess The Word Game";
 
 const randomWords = [
-    'apple', 'bread', 'chair', 'river', 'cloud', 'stone', 'plant', 'table',
-    'house', 'mouse', 'light', 'music', 'sugar', 'honey', 'beach', 'world',
-    'smile', 'train', 'movie', 'story', 'dream', 'magic', 'green', 'black',
-    'white', 'brown', 'happy', 'quiet', 'sunny', 'rainy', 'storm', 'peace',
-    'tiger', 'zebra', 'panda', 'eagle', 'shark', 'whale', 'lemon', 'grape',
-    'peach', 'mango', 'berry', 'water', 'steam', 'flame', 'earth', 'metal',
-    'paper', 'pencil', 'brush', 'paint', 'clock', 'phone', 'pizza', 'salad',
-    'pasta', 'cheese', 'coffee', 'cookie', 'butter', 'candy', 'blanket', 'window'
+    'orange', 'banana', 'tomato', 'potato', 'butter', 'cheese', 'cookie', 'coffee', 'pepper',
+    'onions', 'pickle', 'marble', 'silver', 'golden', 'violet', 'purple', 'yellow', 'animal',
+    'planet', 'rocket', 'bridge', 'castle', 'street', 'corner', 'people', 'family', 'friend',
+    'garden', 'forest', 'desert', 'island', 'school', 'window', 'pillow', 'summer', 'winter',
+    'spring', 'autumn', 'bottle', 'bucket', 'breeze', 'driver', 'letter', 'number', 'string',
+    'blanket', 'picture', 'battery', 'teacher', 'student', 'airport', 'library',
+    'message', 'address', 'monster', 'morning', 'evening', 'holiday',
+    'apple', 'bread', 'chair', 'river', 'cloud', 'plant'
 ];
 
 const WORD = randomWords[Math.floor(Math.random() * randomWords.length)].toUpperCase();
