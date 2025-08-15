@@ -31,7 +31,7 @@ export default function generateKeyColors() {
     keysGroup.appendChild(keyThree);
 
     const tip = document.createElement('p');
-    tip.innerHTML = `<span class="material-icons tip" style="color: var(--yellow)">tips_and_updates</span><strong>To get a hint,</strong> you need to <strong>tap on the desired box and leave it blank.</strong>`;
+    tip.innerHTML = `<span class="material-icons tip" style="color: var(--yellow)">tips_and_updates</span><strong>Tap on the desired box and press 'Hints' button to get a hint.</strong>`;
     tip.style.cssText = `
         padding: 1rem;
         background: wheat;
