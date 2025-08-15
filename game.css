@@ -107,20 +107,20 @@ h1 {
     padding: clamp(1rem, 2vw, 2rem);
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     border-radius: 1rem;
 }
 
 #trials {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
 }
 
 .try {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .try h2 {
