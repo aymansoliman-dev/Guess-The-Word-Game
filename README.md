@@ -1,86 +1,88 @@
-# Guess The Word Game solution
+# Guess The Word Game
 
-This is a solution to the [Guess The Word Game challenge](https://github.com/aymansoliman-dev/Guess-The-Word-Game). This project is a fun, interactive browser game where the player tries to guess the hidden word with the help of visual feedback for correct, misplaced, and incorrect letters.
+This is a solution to the [Guess The Word Game challenge](https://github.com/aymansoliman-dev/Guess-The-Word-Game).  
+It’s a fun, interactive browser game where the player tries to guess the hidden word with the help of visual feedback for correct, misplaced, and incorrect letters.  
 
-## Table of contents
+I also focused on **accessibility**, **SEO**, and added **Open Graph meta tags** for the first time, so the project looks good when shared on social media.  
+
+---
+
+## 📑 Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Design](#Design)
+  - [Design](#design)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
+  - [Accessibility & SEO](#accessibility--seo)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
+- [Lighthouse Report](#lighthouse-report)
 - [Author](#author)
 
-## Overview
+---
 
-### The challenge
+## 📌 Overview
+
+### 🎯 The challenge
 
 Users should be able to:
 
-- Guess the hidden word letter by letter
-- See different key colors for:
-  - Letter is correct and in the right position
-  - Letter is correct but in the wrong position
-  - Letter is not in the word at all
+- Guess the hidden word letter by letter  
+- See different key colors for:  
+  - ✅ Letter is correct and in the right position  
+  - 🟡 Letter is correct but in the wrong position  
+  - ❌ Letter is not in the word at all  
+- Play the game using only their keyboard  
+- View a responsive layout depending on device size  
+- See hover and focus states for interactive elements  
+- Use hints (limited) for better playability  
 
-- Play the game using only their keyboard
-- View a responsive layout depending on device size
-- See hover and focus states for interactive elements
-
-### Design
+### 🎨 Design
 
 ![Desktop Design](design/desktop.png)
 
-##
+### 🔗 Links
 
-### Links
+- Solution URL: [Challenge Solution](https://github.com/aymansoliman-dev/Guess-The-Word-Game)  
+- Live Site URL: [Live Preview](https://aymansoliman-dev.github.io/Guess-The-Word-Game/)  
 
-- Solution URL: [Challenge Solution](https://github.com/aymansoliman-dev/Guess-The-Word-Game)
-- Live Site URL: [Live Preview](https://aymansoliman-dev.github.io/Guess-The-Word-Game/)
+---
 
-## My process
+## 🚀 My process
 
-### Built with
+### 🛠 Built with
 
-- HTML
-- CSS
-- Flexbox
-- Responsive design (desktop-first)
-- JavaScript:
-    - DOM manipulation
-    - Event listeners
-    - Keyboard events
-    - Custom Validation
+- **HTML**  
+- **CSS** (Flexbox, Responsive design – desktop-first)  
+- **JavaScript**:  
+  - DOM manipulation  
+  - Event listeners  
+  - Keyboard events  
+  - Custom validation  
+  - State management  
 
-### What I learned
+---
+
+### 📚 What I learned
 
 From building this project, I learned several JavaScript and DOM manipulation concepts:
 
-- **Using constants for key codes** – Defining VK_LEFT, VK_RIGHT, etc., made the keyboard event handling more readable and maintainable instead of hard-coding numbers.
+- **Using constants for key codes** – readability in keyboard event handling.  
+- **Audio handling** – creating `Audio` objects, controlling playback, and using sounds for feedback.  
+- **Form-like keyboard navigation** – moving between input fields with arrow keys, backspace, and Enter.  
+- **State management** – tracking `numberOfTrials` and `numberOfHints` dynamically.  
+- **Dynamic DOM updates** – adding/removing classes for `.correct`, `.incorrect`, `.not-in-place`.  
+- **Creating dynamic popups** – generating success/failure messages in the DOM.  
+- **Game logic functions** – reusable functions like `checkLetters()`, `generateFailingMsg()`, `generateSuccessMsg()`.  
+- **User input validation** – preventing empty/invalid guesses.  
+- **Accessibility** – ensuring the game is accessible for users with disabilities.  
+- **SEO** – optimizing the page for search engines.  
+- **Open Graph meta tags** – sharing the game on social media.
 
-- **Audio handling in JavaScript** – I learned how to create Audio objects, control their volume, jump to a specific point (currentTime), and play them as part of user feedback.
-
-- **Form-like keyboard navigation** – Implementing custom navigation between .input-field elements using arrow keys and backspace improved accessibility and made the game more intuitive.
-
-- **State management with variables** – Keeping track of numberOfTrials and numberOfHints in JavaScript to dynamically update the UI and restrict actions.
-
-- **Dynamic DOM updates** – 
-    - Using querySelector / querySelectorAll to target elements.
-
-    - Adding / removing classes (.correct, .incorrect, .not-in-place) to reflect game state visually.
-
-    - Disabling and enabling inputs at different stages of the game.
-
-- **Creating dynamic popups** – Generating HTML elements (div, h2, p, button) with JavaScript and injecting them into the DOM for win/lose messages.
-
-- **Game logic functions** – Encapsulating functionality in reusable functions like checkLetters(), generateFailingMsg(), and generateSuccessMsg() to keep the code clean and organized.
-
-- **User input validation** – Ensuring that empty guesses trigger an alert and reset, preventing invalid submissions.
-
+---
 
 ```js
 function checkLetters(guess, WORD, activeRow) {
@@ -100,7 +102,6 @@ function checkLetters(guess, WORD, activeRow) {
     }
 }
 ```
-
 ```js
 // Form-like keyboard navigation
 Array.from(inputFields).forEach(inputField => {
@@ -131,14 +132,48 @@ Array.from(inputFields).forEach(inputField => {
 });
 ```
 
-### Continued development
+```html
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Author" content="Ayman Soliman">
+<meta name="Description" content="Guess the word game">
+<meta name="Keywords" content="game, word, guess, game, word, guess">
+<meta name="Language" content="English">
 
-I want to continue improving game logic by adding:
+<!-- Open Graph -->
+<meta property="og:title" content="Guess the Word Game">
+<meta property="og:description" content="A fun game to guess the word based on given clues.">
+<meta property="og:image" content="https://res.cloudinary.com/dxlofja7z/image/upload/v1755326128/desktop_he7l1d.png">
+<meta property="og:url" content="https://aymansoliman-dev.github.io/Guess-The-Word-Game/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Guess the Word Game">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guess the Word Game">
+<meta name="twitter:description" content="A fun game to guess the word based on given clues.">
+<meta name="twitter:image" content="https://res.cloudinary.com/dxlofja7z/image/upload/v1755326128/desktop_he7l1d.png">
+<meta name="twitter:creator" content="@a_soliman1783">
+```
 
-- Random word generator
-- Difficulty levels
-- A scoring system
+### Accessibility, SEO, and Best Practices
 
+- Added ARIA roles and focus states for keyboard navigation.
+
+- Ensured good color contrast and proper labels.
+
+- First project where I used Open Graph meta tags (Facebook, Twitter, LinkedIn previews).
+
+- Scored 100 in Accessibility, SEO, and Best Practices on Lighthouse.
+
+#### Lighthouse Report
+
+- ⚡ Performance: 90  
+- ♿ Accessibility: 100
+- ✅ Best Practices: 100
+- 🔍 SEO: 100
+
+##
 
 ### Useful resources
 
